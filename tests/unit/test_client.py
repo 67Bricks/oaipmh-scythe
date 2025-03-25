@@ -71,6 +71,24 @@ def test_no_retry(scythe: Scythe, respx_mock: MockRouter) -> None:
         scythe.harvest(query)
     assert mock_route.call_count == 1
 
+def test_no_retry_on_transport_error(scythe: Scythe, respx_mock: MockRouter) -> None:
+    mock_route = respx_mock.get("https://zenodo.org/oai2d?verb=ListIdentifiers&metadataPrefix=oai_dc").mock(
+        side_effect=httpx.ConnectError
+    )
+    with suppress(httpx.ConnectError):
+        scythe.harvest(query)
+    assert mock_route.call_count == 1
+
+def test_no_retry_on_other_error(scythe: Scythe, respx_mock: MockRouter) -> None:
+    mock_route = respx_mock.get("https://zenodo.org/oai2d?verb=ListIdentifiers&metadataPrefix=oai_dc").mock(
+        side_effect=RuntimeError("No")
+    )
+    scythe.max_retries = 3
+    scythe.default_retry_after = 0
+    scythe.retry_on_transport_error = True
+    with suppress(RuntimeError):
+        scythe.harvest(query)
+    assert mock_route.call_count == 1
 
 def test_retry_on_503(scythe: Scythe, respx_mock: MockRouter, mocker) -> None:
     scythe.max_retries = 3
@@ -112,6 +130,18 @@ def test_retry_on_custom_code(scythe: Scythe, respx_mock: MockRouter, mocker) ->
     assert mock_route.call_count == 4
     assert mock_sleep.call_count == 3
 
+def test_retry_on_transport_error(scythe: Scythe, respx_mock: MockRouter, mocker) -> None:
+    mock_route = respx_mock.get("https://zenodo.org/oai2d?verb=ListIdentifiers&metadataPrefix=oai_dc").mock(
+        side_effect=httpx.ConnectError("Nope")
+    )
+    scythe.max_retries = 3
+    scythe.default_retry_after = 0
+    scythe.retry_on_transport_error = True
+    mock_sleep = mocker.patch("time.sleep")
+    with suppress(httpx.ConnectError):
+        scythe.harvest(query)
+    assert mock_route.call_count == 4
+    assert mock_sleep.call_count == 3
 
 def test_no_auth_arguments():
     with Scythe("https://zenodo.org/oai2d") as scythe:

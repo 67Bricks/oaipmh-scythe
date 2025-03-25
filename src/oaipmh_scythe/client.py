@@ -81,6 +81,7 @@ class Scythe:
         iterator: type[BaseOAIIterator] = OAIItemIterator,
         max_retries: int = 0,
         retry_status_codes: Iterable[int] | None = None,
+        retry_on_transport_error: bool = False,
         default_retry_after: int | float = 60,
         class_mapping: dict[str, type[OAIItem]] | None = None,
         encoding: str = "utf-8",
@@ -97,6 +98,7 @@ class Scythe:
             raise TypeError(f"Argument 'iterator' must be subclass of {BaseOAIIterator.__name__}")
         self.max_retries = max_retries
         self.retry_status_codes = retry_status_codes or (503,)
+        self.retry_on_transport_error = retry_on_transport_error
         if default_retry_after <= 0:
             raise ValueError(
                 f"Invalid value for 'default_retry_after': {default_retry_after}. default_retry_after must be positive int or float."
@@ -172,26 +174,45 @@ class Scythe:
         """
         http_response = self._request(query)
         for _ in range(self.max_retries):
-            if httpx.codes.is_error(http_response.status_code) and http_response.status_code in self.retry_status_codes:
+            if self._should_retry(http_response):
                 retry_after = self.get_retry_after(http_response)
-                logger.warning("HTTP %d! Retrying after %d seconds...", http_response.status_code, retry_after)
+                self._log_retry(http_response, retry_after)
                 time.sleep(retry_after)
                 http_response = self._request(query)
+        if isinstance(http_response, httpx.HTTPError):
+            raise http_response
         http_response.raise_for_status()
         return OAIResponse(http_response, params=query)
 
-    def _request(self, query: dict[str, str]) -> httpx.Response:
+    @staticmethod
+    def _log_retry(http_response: httpx.Response | httpx.HTTPError, retry_after: int | float) -> None:
+        if isinstance(http_response, httpx.HTTPError):
+            description = str(http_response)
+        else:
+            description = f"HTTP {http_response.status_code}"
+        logger.warning("%s! Retrying after %d seconds...", description, retry_after)
+
+    def _should_retry(self, http_response: httpx.Response | httpx.HTTPError) -> bool:
+        if isinstance(http_response, httpx.HTTPError):
+            return self.retry_on_transport_error and isinstance(http_response, httpx.TransportError)
+        return httpx.codes.is_error(http_response.status_code) and http_response.status_code in self.retry_status_codes
+
+    def _request(self, query: dict[str, str]) -> httpx.Response | httpx.HTTPError:
         """Send an HTTP request to the OAI server using the configured HTTP method and given query parameters.
 
         Args:
             query: A dictionary containing the request parameters.
 
         Returns:
-            A Response object representing the server's response to the HTTP request.
+            A Response object representing the server's response to the HTTP request or
+            an HTTPError object if an error occurred during the request
         """
-        if self.http_method == "GET":
-            return self.client.get(self.endpoint, params=query)
-        return self.client.post(self.endpoint, data=query)
+        try:
+            if self.http_method == "GET":
+                return self.client.get(self.endpoint, params=query)
+            return self.client.post(self.endpoint, data=query)
+        except httpx.HTTPError as e:
+            return e
 
     def list_records(
         self,
@@ -394,7 +415,7 @@ class Scythe:
         query = remove_none_values(_query)
         yield from self.iterator(self, query)
 
-    def get_retry_after(self, http_response: httpx.Response) -> int | float:
+    def get_retry_after(self, http_response: httpx.Response | httpx.HTTPError) -> int | float:
         """Determine the appropriate time to wait before retrying a request, based on the server's response.
 
         Check the status code of the provided HTTP response. If it's 503 (Service Unavailable),
@@ -407,7 +428,7 @@ class Scythe:
         Returns:
             An integer representing the number of seconds to wait before retrying the request.
         """
-        if http_response.status_code == httpx.codes.SERVICE_UNAVAILABLE:
+        if isinstance(http_response, httpx.Response) and http_response.status_code == httpx.codes.SERVICE_UNAVAILABLE:
             try:
                 return int(http_response.headers.get("retry-after"))
             except TypeError:
