@@ -1,0 +1,313 @@
+interactions:
+- request:
+    body: ''
+    headers:
+      accept:
+      - text/xml; charset=utf-8
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      host:
+      - zenodo.org
+      user-agent:
+      - oaipmh-scythe/0.9.0
+    method: GET
+    uri: https://zenodo.org/oai2d?verb=ListRecords&metadataPrefix=oai_dc
+  response:
+    content: "<?xml version='1.0' encoding='UTF-8'?>\n<?xml-stylesheet type=\"text/xsl\"
+      href=\"/static/oai2.xsl\"?>\n<OAI-PMH xmlns=\"http://www.openarchives.org/OAI/2.0/\"
+      xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/
+      http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd\">\n  <responseDate>2024-01-18T16:26:03Z</responseDate>\n
+      \ <request verb=\"ListRecords\" metadataPrefix=\"oai_dc\">https://zenodo.org/oai2d</request>\n
+      \ <ListRecords>\n    <record>\n      <header>\n        <identifier>oai:zenodo.org:2217771</identifier>\n
+      \       <datestamp>2020-01-20T17:11:12Z</datestamp>\n      </header>\n      <metadata>\n
+      \       <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
+      xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
+      \         <dc:creator>Moir, James</dc:creator>\n          <dc:date>1910-01-01</dc:date>\n
+      \         <dc:description>n/a</dc:description>\n          <dc:identifier>https://doi.org/10.1080/00359191009519377</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:2217771</dc:identifier>\n          <dc:publisher>Zenodo</dc:publisher>\n
+      \         <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>\n          <dc:rights>Creative
+      Commons Zero v1.0 Universal</dc:rights>\n          <dc:rights>https://creativecommons.org/publicdomain/zero/1.0/legalcode</dc:rights>\n
+      \         <dc:title>Some Remarkable Oxidation-Products of Benzidine</dc:title>\n
+      \         <dc:type>info:eu-repo/semantics/article</dc:type>\n        </oai_dc:dc>\n
+      \     </metadata>\n    </record>\n    <record>\n      <header status=\"deleted\">\n
+      \       <identifier>oai:zenodo.org:2510668</identifier>\n        <datestamp>2020-01-20T13:19:30Z</datestamp>\n
+      \     </header>\n      <metadata>\n        <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/
+      http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n          <dc:creator>Aldridge,
+      H. E.</dc:creator>\n          <dc:date>1919-10-30</dc:date>\n          <dc:description>n/a</dc:description>\n
+      \         <dc:identifier>https://doi.org/10.1038/104174c0</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:2510668</dc:identifier>\n          <dc:publisher>Zenodo</dc:publisher>\n
+      \         <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>\n          <dc:rights>Creative
+      Commons Zero v1.0 Universal</dc:rights>\n          <dc:rights>https://creativecommons.org/publicdomain/zero/1.0/legalcode</dc:rights>\n
+      \         <dc:title>Luminous Worms</dc:title>\n          <dc:type>info:eu-repo/semantics/article</dc:type>\n
+      \       </oai_dc:dc>\n      </metadata>\n    </record>\n    <record>\n      <header>\n
+      \       <identifier>oai:zenodo.org:1964765</identifier>\n        <datestamp>2020-01-20T16:10:28Z</datestamp>\n
+      \     </header>\n      <metadata>\n        <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/
+      http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n          <dc:creator>Lyall,
+      W.-M.</dc:creator>\n          <dc:date>1875-10-07</dc:date>\n          <dc:description>n/a</dc:description>\n
+      \         <dc:identifier>https://doi.org/10.1038/012496b0</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:1964765</dc:identifier>\n          <dc:publisher>Zenodo</dc:publisher>\n
+      \         <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>\n          <dc:rights>Creative
+      Commons Zero v1.0 Universal</dc:rights>\n          <dc:rights>https://creativecommons.org/publicdomain/zero/1.0/legalcode</dc:rights>\n
+      \         <dc:title>Origin of the Numerals</dc:title>\n          <dc:type>info:eu-repo/semantics/article</dc:type>\n
+      \       </oai_dc:dc>\n      </metadata>\n    </record>\n    <resumptionToken
+      expirationDate=\"2024-01-18T16:28:17Z\" cursor=\"0\" completeListSize=\"3755279\">eJyNzE1vgjAcgPHv8j</resumptionToken>\n
+      \ </ListRecords>\n</OAI-PMH>\n"
+    headers:
+      cache-control:
+      - private
+      content-encoding:
+      - gzip
+      content-security-policy:
+      - 'default-src ''self'' fonts.googleapis.com *.gstatic.com data: ''unsafe-inline''
+        ''unsafe-eval'' blob: zenodo-broker.web.cern.ch zenodo-broker-qa.web.cern.ch
+        maxcdn.bootstrapcdn.com cdnjs.cloudflare.com ajax.googleapis.com webanalytics.web.cern.ch'
+      content-type:
+      - text/xml; charset=utf-8
+      date:
+      - Thu, 18 Jan 2024 16:26:17 GMT
+      permissions-policy:
+      - interest-cohort=()
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      retry-after:
+      - '46'
+      server:
+      - nginx
+      set-cookie:
+      - session=f111c62969784731_65a95129.R9SjIy_ItddTZ-aK5yycF7Vldg4; Expires=Sun,
+        28 Jan 2024 16:26:17 GMT; Secure; HttpOnly; Path=/; SameSite=Lax
+      - 5569e5a730cade8ff2b54f1e815f3670=1b29e26b009271df90219cb6d1da6786; path=/;
+        HttpOnly; Secure; SameSite=None
+      strict-transport-security:
+      - max-age=31556926; includeSubDomains
+      - max-age=15768000
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - sameorigin
+      x-ratelimit-limit:
+      - '120'
+      x-ratelimit-remaining:
+      - '119'
+      x-ratelimit-reset:
+      - '1705595224'
+      x-request-id:
+      - 7f3472ac3ae3fadaed4434ae304e85ae
+      x-xss-protection:
+      - 1; mode=block
+    http_version: HTTP/1.1
+    status_code: 200
+- request:
+    body: ''
+    headers:
+      accept:
+      - text/xml; charset=utf-8
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      cookie:
+      - session=f111c62969784731_65a95129.R9SjIy_ItddTZ-aK5yycF7Vldg4; 5569e5a730cade8ff2b54f1e815f3670=1b29e26b009271df90219cb6d1da6786
+      host:
+      - zenodo.org
+      user-agent:
+      - oaipmh-scythe/0.9.0
+    method: GET
+    uri: https://zenodo.org/oai2d?verb=ListRecords&resumptionToken=eJyNzE1vgjAcgPHv8j
+  response:
+    content: "<?xml version='1.0' encoding='UTF-8'?>\n<?xml-stylesheet type=\"text/xsl\"
+      href=\"/static/oai2.xsl\"?>\n<OAI-PMH xmlns=\"http://www.openarchives.org/OAI/2.0/\"
+      xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/
+      http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd\">\n  <responseDate>2024-01-18T16:26:17Z</responseDate>\n
+      \ <request resumptionToken=\"eJyNzE1vgjAcgPHv8j\"
+      verb=\"ListRecords\">https://zenodo.org/oai2d</request>\n  <ListRecords>\n    <record>\n
+      \     <header>\n        <identifier>oai:zenodo.org:6243265</identifier>\n        <datestamp>2022-03-08T03:45:27Z</datestamp>\n
+      \       <setSpec>user-biosyslit</setSpec>\n      </header>\n      <metadata>\n
+      \       <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\"
+      xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n
+      \         <dc:creator>Jinlu Li</dc:creator>\n          <dc:creator>Naifa Liu</dc:creator>\n
+      \         <dc:creator>Junxing Yang</dc:creator>\n          <dc:date>2007-12-31</dc:date>\n
+      \         <dc:description>&amp;lt;p&amp;gt;[[Triplophysa papilloso-labiatus
+      (Kessler 1879)]]&amp;lt;/p&amp;gt;  &amp;lt;p&amp;gt;Triplophysa papilloso-labiatus
+      (Kessler 1879), one of the dominant Triplophysa species in the Tarim Basin,
+      has been recently regarded as a synonym of T. tenuis (Day 1877) by many authors
+      (Zhu 1989; Wu &amp;amp; Wu 1991; Yang &amp;amp; Zhang 1991; Ren et al 2005),
+      but other authors regard it as a valid species name (Wu &amp;amp; Wu 1990; Wu
+      &amp;amp; Tan 1991; Zhao 1991; Yang &amp;amp; Jing 1991; Yang &amp;amp; Tang
+      1995). Triplophysa tenuis was originally described as &amp;ldquo;Air-vessel
+      in two portions, enclosed in bone&amp;rdquo;. The posterior portion of air bladder
+      is rudimentary and reduced (Day 1877); however, T. papilloso-labiatus has a
+      free posterior portion of the air bladder, so T. tenuis Day is different from
+      T. papilloso-labiatus and T. papilloso-labiatus is a valid species.&amp;lt;/p&amp;gt;</dc:description>\n
+      \         <dc:description>Published as part of &amp;lt;i&amp;gt;Jinlu Li, Naifa
+      Liu &amp;amp; Junxing Yang, 2007, A brief review of Triplophysa (Cypriniformes:
+      Balitoridae) species from the Tarim Basin in Xinjiang, China, with description
+      of a new species., pp. 47-58 in Zootaxa 1605&amp;lt;/i&amp;gt; on page 51</dc:description>\n
+      \         <dc:identifier>https://doi.org/10.5281/zenodo.6243265</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:6243265</dc:identifier>\n          <dc:identifier>http://treatment.plazi.org/id/FFFEC5D8DA6CFBBB6DFA2DE71B764A33</dc:identifier>\n
+      \         <dc:publisher>Zenodo</dc:publisher>\n          <dc:relation>http://publication.plazi.org/id/F34685AAE6D54E7E9A14164416FE890A</dc:relation>\n
+      \         <dc:relation>https://zenodo.org/communities/biosyslit</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.6243264</dc:relation>\n
+      \         <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>\n          <dc:rights>Creative
+      Commons Zero v1.0 Universal</dc:rights>\n          <dc:rights>https://creativecommons.org/publicdomain/zero/1.0/legalcode</dc:rights>\n
+      \         <dc:source>A brief review of Triplophysa (Cypriniformes: Balitoridae)
+      species from the Tarim Basin in Xinjiang, China, with description of a new species.,
+      pp. 47-58 in Zootaxa, 1605, 51, (2007-12-31)</dc:source>\n          <dc:subject>Biodiversity</dc:subject>\n
+      \         <dc:subject>Taxonomy</dc:subject>\n          <dc:subject>Animalia</dc:subject>\n
+      \         <dc:subject>Chordata</dc:subject>\n          <dc:subject>Actinopterygii</dc:subject>\n
+      \         <dc:subject>Cypriniformes</dc:subject>\n          <dc:subject>Nemacheilidae</dc:subject>\n
+      \         <dc:subject>Triplophysa</dc:subject>\n          <dc:subject>Triplophysa
+      papilloso-Labiatus</dc:subject>\n          <dc:title>Triplophysa papilloso-labiatus</dc:title>\n
+      \         <dc:type>info:eu-repo/semantics/other</dc:type>\n        </oai_dc:dc>\n
+      \     </metadata>\n    </record>\n    <record>\n      <header>\n        <identifier>oai:zenodo.org:5127620</identifier>\n
+      \       <datestamp>2021-07-23T12:44:15Z</datestamp>\n        <setSpec>user-biosyslit</setSpec>\n
+      \     </header>\n      <metadata>\n        <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/
+      http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n          <dc:creator>Munroe,
+      Thomas A.</dc:creator>\n          <dc:creator>Hashimoto, Jun</dc:creator>\n
+      \         <dc:date>2008-08-01</dc:date>\n          <dc:description>Munroe, Thomas
+      A., Hashimoto, Jun (2008): A new Western Pacific Tonguefish (Pleuronectiformes:
+      Cynoglossidae): The first Pleuronectiform discovered at active Hydrothermal
+      Vents. Zootaxa 1839 (1): 43-59, DOI: 10.11646/zootaxa.1839.1.2, URL: https://biotaxa.org/Zootaxa/article/view/zootaxa.1839.1.2</dc:description>\n
+      \         <dc:identifier>https://doi.org/10.11646/zootaxa.1839.1.2</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:5127620</dc:identifier>\n          <dc:identifier>lsid:urn:lsid:plazi.org:pub:F411FF9CFF9FE435324C4304FFB0FFCB</dc:identifier>\n
+      \         <dc:identifier>http://publication.plazi.org/id/F411FF9CFF9FE435324C4304FFB0FFCB</dc:identifier>\n
+      \         <dc:publisher>Zenodo</dc:publisher>\n          <dc:relation>http://treatment.plazi.org/id/082887E4FF9DE43932DB42ABFB87FC31</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5127622</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5127624</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5127626</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5127628</dc:relation>\n
+      \         <dc:relation>https://zenodo.org/communities/biosyslit</dc:relation>\n
+      \         <dc:rights>info:eu-repo/semantics/restrictedAccess</dc:rights>\n          <dc:source>Zootaxa,
+      1839(1), 43-59, (2008-08-01)</dc:source>\n          <dc:subject>Biodiversity</dc:subject>\n
+      \         <dc:subject>Taxonomy</dc:subject>\n          <dc:subject>Animalia</dc:subject>\n
+      \         <dc:subject>Chordata</dc:subject>\n          <dc:subject>Actinopterygii</dc:subject>\n
+      \         <dc:subject>Pleuronectiformes</dc:subject>\n          <dc:subject>Cynoglossidae</dc:subject>\n
+      \         <dc:title>A new Western Pacific Tonguefish (Pleuronectiformes: Cynoglossidae):
+      The first Pleuronectiform discovered at active Hydrothermal Vents</dc:title>\n
+      \         <dc:type>info:eu-repo/semantics/article</dc:type>\n        </oai_dc:dc>\n
+      \     </metadata>\n    </record>\n    <record>\n      <header>\n        <identifier>oai:zenodo.org:5248620</identifier>\n
+      \       <datestamp>2021-10-20T13:45:43Z</datestamp>\n        <setSpec>user-biosyslit</setSpec>\n
+      \     </header>\n      <metadata>\n        <oai_dc:dc xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+      xmlns:oai_dc=\"http://www.openarchives.org/OAI/2.0/oai_dc/\" xsi:schemaLocation=\"http://www.openarchives.org/OAI/2.0/oai_dc/
+      http://www.openarchives.org/OAI/2.0/oai_dc.xsd\">\n          <dc:creator>Angulo,
+      Arturo</dc:creator>\n          <dc:creator>L\xF3pez, Myrna I.</dc:creator>\n
+      \         <dc:creator>Bussing, William A.</dc:creator>\n          <dc:creator>Murase,
+      Atsunobu</dc:creator>\n          <dc:date>2014-09-18</dc:date>\n          <dc:description>&amp;lt;i&amp;gt;Hydrolagus
+      macrophthalmus&amp;lt;/i&amp;gt; de Buen 1959   &amp;lt;p&amp;gt;Big eye Chimaera&amp;lt;/p&amp;gt;
+      \ &amp;lt;p&amp;gt;(Figure 7, Table 5)&amp;lt;/p&amp;gt;  &amp;lt;p&amp;gt;
+      &amp;lt;b&amp;gt;Material examined.&amp;lt;/b&amp;gt; 4 specimens. UCR 2611&amp;ndash;08,
+      n=2, females, 435&amp;ndash;581 mm TL, 223&amp;ndash;343 mm BDL; in front of
+      Playa Coyote, Pen&amp;iacute;nsula de Nicoya, Guanacaste, Costa Rica (9&amp;deg;40'50.02&amp;quot;
+      N, 85&amp;deg;28'4.81&amp;quot; W), 650&amp;ndash;700 m, 7 April 2000, collected
+      by M. Vitola. UCR 2901&amp;ndash;01, n=2, females, 543&amp;ndash;639 mm TL,
+      334&amp;ndash;349 mm BDL; 44.95 Km, 253.73 &amp;deg; T from Cabo Blanco, Puntarenas,
+      Costa Rica (9&amp;ordm;26'16.44&amp;quot; N, 85&amp;ordm;29'56.04&amp;quot;
+      W), 560&amp;ndash;620 m, 24 November 2010, collected by J.M. Carvajal.&amp;lt;/p&amp;gt;
+      \  &amp;lt;p&amp;gt; &amp;lt;b&amp;gt;Diagnosis.&amp;lt;/b&amp;gt; Body slender;
+      snout short and bluntly rounded; head relatively short (HDL 24.2&amp;ndash;24.5%
+      BDL); eyes relatively large (EYL 30.9&amp;ndash;34.2% HDL); oral and preopercular
+      lateral line canals sharing a short common branch from the infraorbital canal;
+      pectoral fins relatively large (P1A 36.5&amp;ndash;40.8% BDL), extending posterior
+      to the insertion of pelvic fins; lateral line canal of the trunk without sinusoidal
+      undulations; anterior and posterior regions of second dorsal fin considerably
+      taller than middle region; anal fin absent; tail region elongate and slender
+      (PCA 58.3&amp;ndash;59.9% BDL); caudal-fin axis horizontal with the fin nearly
+      symmetrical, epaxial and hypaxial lobes equal sized; uniform brown coloration
+      across entire body, with no white markings; bluish fins. Additional morphometric
+      measurements, expressed as percentage of body length (% BDL) or head length
+      (% HDL), and comparative data are presented in Table 5.&amp;lt;/p&amp;gt;   &amp;lt;p&amp;gt;......continued
+      on the next page&amp;lt;/p&amp;gt;  &amp;lt;p&amp;gt; &amp;lt;b&amp;gt;Distribution.&amp;lt;/b&amp;gt;
+      Eastern Pacific: Central coast of Mexico (Gonz&amp;aacute;lez-Acosta &amp;lt;i&amp;gt;et
+      al.&amp;lt;/i&amp;gt; 2010), Costa Rica (this study), Peru and Chile, at depths
+      of 590&amp;ndash;1160 m (Didier &amp;amp; Meckley 2009b).&amp;lt;/p&amp;gt;
+      \  &amp;lt;p&amp;gt; &amp;lt;b&amp;gt;Remarks.&amp;lt;/b&amp;gt; Although this
+      species has a postulated distribution extending from the central coast of Mexico
+      (Gonz&amp;aacute;lez-Acosta &amp;lt;i&amp;gt;et al.&amp;lt;/i&amp;gt; 2010)
+      to Chile (Didier &amp;amp; Meckley 2009b), there are no published records between
+      Mexico and Peru (Didier &amp;amp; Meckley 2009b). The discovery of these specimens
+      in Costa Rican waters increases the knowledge of its marine ichthyofauna and
+      provides evidence of a broader distributional pattern for this species in the
+      eastern Pacific region.&amp;lt;/p&amp;gt;</dc:description>\n          <dc:description>Published
+      as part of &amp;lt;i&amp;gt;Angulo, Arturo, L\xF3pez, Myrna I., Bussing, William
+      A. &amp;amp; Murase, Atsunobu, 2014, Records of chimaeroid fishes (Holocephali:
+      Chimaeriformes) from the Pacific coast of Costa Rica, with the description of
+      a new species of Chimera (Chimaeridae) from the eastern Pacific Ocean, pp. 554-574
+      in Zootaxa 3861 (6)&amp;lt;/i&amp;gt; on pages 568-570, DOI: 10.11646/zootaxa.3861.6.3,
+      &amp;lt;a href=\"http://zenodo.org/record/5247997\"&amp;gt;http://zenodo.org/record/5247997&amp;lt;/a&amp;gt;</dc:description>\n
+      \         <dc:identifier>https://doi.org/10.5281/zenodo.5248620</dc:identifier>\n
+      \         <dc:identifier>oai:zenodo.org:5248620</dc:identifier>\n          <dc:identifier>http://treatment.plazi.org/id/03C2878AFFE8FF9C44D6F88780A9DE6F</dc:identifier>\n
+      \         <dc:publisher>Zenodo</dc:publisher>\n          <dc:relation>https://doi.org/10.11646/zootaxa.3861.6.3</dc:relation>\n
+      \         <dc:relation>http://zenodo.org/record/5247997</dc:relation>\n          <dc:relation>http://publication.plazi.org/id/FFFBFFF2FFE6FF8C4441FF8C8113DB25</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5248068</dc:relation>\n
+      \         <dc:relation>http://zoobank.org/8169FF7C-74C0-4385-8B67-09306D815CD2</dc:relation>\n
+      \         <dc:relation>https://zenodo.org/communities/biosyslit</dc:relation>\n
+      \         <dc:relation>https://doi.org/10.5281/zenodo.5248619</dc:relation>\n
+      \         <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>\n          <dc:rights>License
+      Not Specified</dc:rights>\n          <dc:source>Records of chimaeroid fishes
+      (Holocephali: Chimaeriformes) from the Pacific coast of Costa Rica, with the
+      description of a new species of Chimera (Chimaeridae) from the eastern Pacific
+      Ocean, pp. 554-574 in Zootaxa, 3861(6), 568-570, (2014-09-18)</dc:source>\n
+      \         <dc:subject>Biodiversity</dc:subject>\n          <dc:subject>Taxonomy</dc:subject>\n
+      \         <dc:subject>Animalia</dc:subject>\n          <dc:subject>Chordata</dc:subject>\n
+      \         <dc:subject>Holocephali</dc:subject>\n          <dc:subject>Chimaeriformes</dc:subject>\n
+      \         <dc:subject>Chimaeridae</dc:subject>\n          <dc:subject>Hydrolagus</dc:subject>\n
+      \         <dc:subject>Hydrolagus macrophthalmus</dc:subject>\n          <dc:title>Hydrolagus
+      macrophthalmus de Buen 1959</dc:title>\n          <dc:type>info:eu-repo/semantics/other</dc:type>\n
+      \       </oai_dc:dc>\n      </metadata>\n    </record>\n    <resumptionToken
+      expirationDate=\"2024-01-18T16:28:26Z\" cursor=\"100\" completeListSize=\"3755279\">eJyNzE1vgjAcgPHv8j</resumptionToken>\n
+      \ </ListRecords>\n</OAI-PMH>\n"
+    headers:
+      content-encoding:
+      - gzip
+      content-security-policy:
+      - 'default-src ''self'' fonts.googleapis.com *.gstatic.com data: ''unsafe-inline''
+        ''unsafe-eval'' blob: zenodo-broker.web.cern.ch zenodo-broker-qa.web.cern.ch
+        maxcdn.bootstrapcdn.com cdnjs.cloudflare.com ajax.googleapis.com webanalytics.web.cern.ch'
+      content-type:
+      - text/xml; charset=utf-8
+      date:
+      - Thu, 18 Jan 2024 16:26:26 GMT
+      permissions-policy:
+      - interest-cohort=()
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      retry-after:
+      - '51'
+      server:
+      - nginx
+      set-cookie:
+      - session=f111c62969784731_65a95129.R9SjIy_ItddTZ-aK5yycF7Vldg4; Expires=Sun,
+        28 Jan 2024 16:26:26 GMT; Secure; HttpOnly; Path=/; SameSite=Lax
+      strict-transport-security:
+      - max-age=31556926; includeSubDomains
+      - max-age=15768000
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - sameorigin
+      x-ratelimit-limit:
+      - '120'
+      x-ratelimit-remaining:
+      - '118'
+      x-ratelimit-reset:
+      - '1705595238'
+      x-request-id:
+      - f6dcdc7180ac1f35224a420a37cc8923
+      x-xss-protection:
+      - 1; mode=block
+    http_version: HTTP/1.1
+    status_code: 200
+version: 1

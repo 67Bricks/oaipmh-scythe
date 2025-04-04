@@ -11,6 +11,7 @@ import httpx
 import pytest
 from lxml import etree
 
+from oaipmh_scythe.exceptions import GeneralOAIPMHError
 from oaipmh_scythe.iterator import OAIResponseIterator
 from oaipmh_scythe.models import Record
 from oaipmh_scythe.response import OAIResponse
@@ -156,3 +157,10 @@ def test_list_records_oai_response(scythe: Scythe) -> None:
     assert response.params == {"metadataPrefix": "oai_dc", "verb": "ListRecords"}
     assert isinstance(response.xml, etree._Element)
     assert response.xml.tag == "{http://www.openarchives.org/OAI/2.0/}OAI-PMH"
+
+@pytest.mark.default_cassette("list_record_loop.yaml")
+@pytest.mark.vcr
+def test_list_records_detect_loop(scythe: Scythe) -> None:
+    records = scythe.list_records(ignore_deleted=True)
+    with pytest.raises(GeneralOAIPMHError):
+        list(records)
