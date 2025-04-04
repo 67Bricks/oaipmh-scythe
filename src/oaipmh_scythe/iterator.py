@@ -120,7 +120,12 @@ class BaseOAIIterator(ABC):
                 raise getattr(exceptions, exception_name)(description)
             except AttributeError as exc:
                 raise exceptions.GeneralOAIPMHError(description) from exc
-        self.resumption_token = self._get_resumption_token()
+        new_token = self._get_resumption_token()
+        if self.resumption_token and new_token and new_token.token == self.resumption_token.token:
+            raise exceptions.GeneralOAIPMHError(
+                "Infinite loop detected! Returned resumption token is the same as the previous one. Aborting."
+            )
+        self.resumption_token = new_token
 
 
 class OAIResponseIterator(BaseOAIIterator):
